@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+    <!-- /The jQuery Mobile CSS theme file (optional, if you are overriding the default theme) -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="">
+    <title>Order - Vegetable Ecom Shop</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
+</head>
+
+<body>
+    <div data-role="page" class="jqm-demos ui-responsive-panel" id="order" data-title="Panel responsive page"
+        data-url="panel-responsive-page1">
+        <div data-role="header">
+            <h1><a href="#panel-responsive-page1">Order Form</a></h1>
+            <div data-role = "main" class = "ui-content">
+                <a href = "index.html" class = "ui-btn">Go to Home Page</a>
+            </div>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+                    <li><a href="order.html">Order</a></li>
+                </ul>
+            </div>
+        </div><!-- /header -->
+        <!--Order Form-->
+        <div role="main" class="ui-content jqm-content jqm-fullwidth">
+            <h1>Order Request</h1>
+            <div id="formdata" class="content-product">
+                <form method="POST" onsubmit="return saveData();">
+                <p id="message" class="message"></p>
+                <label for="name">Name</label>
+               <input type="text" id="name" placeholder="Name" />
+               <label for="phone">Phone</label>
+               <input type="text" id="phone" placeholder="Phone" />
+               <label for="address">Address</label>
+               <input type="text" id="address" placeholder="Address" />
+               <label for="product">Product</label>
+               <input type="text" id="product" value="" placeholder="Product" />
+            </div>
+            <div class="btn-box justify-center">
+               <button type="submit" onclick="saveData()">
+               Save Data
+               </button>
+            </div>  
+        </form>
+        </div>
+        
+        <div data-role="footer">
+            <center>
+                <h6>Assignment By Saffar Subedi</h6>
+            </center>
+        </div>
+    </div>
+</body>
+<!-- jQery -->
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+ <script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        var product = localStorage.getItem("Cart");
+        console.log(product);
+        $("#product").val(product);
+    });
+</script>
+
+
+</html>
